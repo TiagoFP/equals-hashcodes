@@ -37,7 +37,7 @@ public class Carro implements Comparable<Carro> {
 		if (!(o instanceof Carro))
 			return false;
 		Carro carro = (Carro) o;
-		return Objects.equals(getMarca(), carro.getmarca);
+		return Objects.equals(getMarca(), carro.getMarca());
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class Carro implements Comparable<Carro> {
 		return "Carro [marca=" + marca + "]";
 	}
 
-	@Override
+	/*@Override
 	public int compareTo(Carro o) {
 		if (this.marca.length() < o.marca.length()) {
 			return -1;
@@ -58,12 +58,13 @@ public class Carro implements Comparable<Carro> {
 		return 1;
 	}
 	return 0;
-	}
+	}*/
 
-	//@Override
-	//public int compareTo(Carro o) {
-	//	return this.getMarca().compareTo(o.getMarca());
+	@Override
+	public int compareTo(Carro o) {
+		return this.getMarca().compareTo(o.getMarca());
 	}
+}
 
 
 
