@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Carro implements Comparable<Carro> {
 
-	String marca;
+	private String marca;
 
 	public Carro(String marca) {
 		this.marca = marca;
@@ -18,7 +18,7 @@ public class Carro implements Comparable<Carro> {
 		this.marca = marca;
 	}
 
-	@Override
+	/*@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -28,6 +28,16 @@ public class Carro implements Comparable<Carro> {
 			return false;
 		Carro carro = (Carro) obj;
 		return Objects.equals(marca, carro.marca);
+	}*/
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (!(o instanceof Carro))
+			return false;
+		Carro carro = (Carro) o;
+		return Objects.equals(getMarca(), carro.getmarca);
 	}
 
 	@Override
